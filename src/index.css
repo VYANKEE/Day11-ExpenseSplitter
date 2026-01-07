@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
+:root {
+  --bg: #0b0b0f;
+  --card-bg: rgba(30, 30, 40, 0.6);
+  --border: rgba(255, 255, 255, 0.1);
+  --primary: #6366f1; /* Indigo */
+  --accent: #a855f7;  /* Purple */
+  --green: #10b981;
+  --red: #f43f5e;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
+
+body { background-color: var(--bg); color: var(--text); overflow-x: hidden; }
+
+/* ANIMATIONS */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* HERO SECTION */
+.hero {
+  height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(circle at top, #1e1b4b 0%, #0b0b0f 70%);
+  text-align: center; padding: 20px;
+}
+
+.hero h1 {
+  font-size: 4rem; font-weight: 700; background: linear-gradient(to right, #818cf8, #c084fc);
+  -webkit-background-clip: text; color: transparent; margin-bottom: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero p { font-size: 1.5rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; animation: fadeIn 1.2s ease-out; }
+
+/* --- FIXED BUTTON STYLE (Sleek & Premium) --- */
+.cta-btn {
+  padding: 12px 35px;
+  font-size: 1.1rem;
+  background: var(--primary); color: white; border: none;
+  border-radius: 50px; cursor: pointer; transition: all 0.3s ease;
+  font-weight: 600;
+  width: fit-content; /* Isse button failna band ho jayega */
+  margin-top: 25px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  animation: fadeIn 1.4s ease-out;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  background: var(--accent);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+}
+
+/* GUIDE SECTION */
+.guide-section { padding: 80px 20px; background: #0f0f13; }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; }
+
+.steps-grid {
+  display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;
+}
+
+.step-card {
+  background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid var(--border);
+  width: 300px; text-align: center; transition: 0.3s;
+}
+.step-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+
+.icon-box {
+  width: 60px; height: 60px; background: rgba(99, 102, 241, 0.1); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--primary);
+}
+
+/* APP DASHBOARD */
+.dashboard-section { padding: 50px 20px; min-height: 100vh; }
+.container { max-width: 900px; margin: 0 auto; }
+
+.card {
+  background: var(--card-bg); backdrop-filter: blur(10px); padding: 25px; border-radius: 16px;
+  border: 1px solid var(--border); margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* TOTAL CARD HIGHLIGHT */
+.total-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+  border: 1px solid var(--primary);
+  text-align: center; padding: 30px;
+}
+.big-amount { font-size: 3rem; font-weight: bold; color: white; margin: 10px 0; }
+
+/* --- FIXED FORMS & INPUTS --- */
+
+/* Sirf Text Inputs aur Selects ko full width do (Checkboxes ko nahi) */
+input:not([type="checkbox"]), select {
+  width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+  color: white; border-radius: 8px; outline: none; margin-top: 8px; transition: 0.3s;
+}
+input:not([type="checkbox"]):focus, select:focus { border-color: var(--accent); background: rgba(0,0,0,0.5); }
+
+/* Buttons Styles */
+button {
+  background: var(--primary); color: white; border: none; padding: 12px; width: 100%;
+  border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 15px; transition: 0.2s;
+}
+button:hover { filter: brightness(1.1); }
+button.secondary { background: transparent; border: 1px solid var(--border); }
+button.secondary:hover { background: rgba(255,255,255,0.05); }
+
+/* --- CHECKBOX ALIGNMENT FIX --- */
+input[type="checkbox"] {
+  width: 20px; height: 20px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center; /* Ek line mein layega */
+  padding: 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.checkbox-item:hover { background: rgba(255,255,255,0.07); }
+.checkbox-item label { flex: 1; cursor: pointer; }
+
+/* LIST ITEMS */
+.list-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px; border-bottom: 1px solid var(--border);
+}
+.tag { padding: 5px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+.tag.green { background: rgba(16, 185, 129, 0.2); color: var(--green); }
+.tag.red { background: rgba(244, 63, 94, 0.2); color: var(--red); }
