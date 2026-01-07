@@ -78,6 +78,6 @@ Renders the chronological history of all added transactions.
 4. src/App.jsx
 Manages the global state and handles data synchronization with LocalStorage.
 
-##LIVE DEMO - : 
+##LIVE DEMO - : https://day11-expense-splitter.vercel.app/
 
 Developed by VYANKEE
